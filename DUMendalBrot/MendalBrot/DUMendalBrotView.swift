@@ -134,7 +134,7 @@ class DUMendalBrotView: UIView {
     
     func implementMendalbrotEquationOn(complexNum: Complex) -> UIColor {
         //Mendalbrot Equation
-        // Zn+1 = (Zn)^2 + c -- start with Z0 = 0
+        // Zn+1 = (Zn)^2 + c 
         var currComplex = Complex()
         for i in 1...colorCount {
             currComplex = currComplex*currComplex + complexNum

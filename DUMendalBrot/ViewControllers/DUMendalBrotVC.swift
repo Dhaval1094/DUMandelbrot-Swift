@@ -43,7 +43,7 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
         tableView.isHidden = true
         btnCloseTable.isHidden = true
         viewSettings.isHidden = true
-        lblProcess.text = "Iterating"
+//        lblProcess.text = "Iterating"
         textView.text = "Iterating"
         viewDescription.layer.borderColor = UIColor.black.cgColor
         viewDescription.layer.borderWidth = 1
@@ -73,6 +73,7 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
             }
             self.mendalBrotView.colorCount = Int(self.txtColorCounts.text ?? "0") ?? 100
             self.mendalBrotView.isStartDrawing = true
+            self.lblProcess.text = "Zoom Lavel: " + self.objSet.zoomVal.description
             self.mendalBrotView.createMendalBortRectFor(complex: self.objSet.complex, zoomVal: self.objSet.zoomVal)
         }
     }
@@ -90,7 +91,7 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
     func iterationsCompletedWith(count: Int) {
         textView.text = "Iterations completed: \(count)"
         indicatorView.stopAnimating()
-        lblProcess.text = "Iteration Completed"
+//        lblProcess.text = "Iteration Completed"
         indicatorView.isHidden = true
         viewIndicator.isHidden = true
     }

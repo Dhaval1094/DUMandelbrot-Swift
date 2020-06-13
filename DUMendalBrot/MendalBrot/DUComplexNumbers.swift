@@ -21,17 +21,17 @@ struct Complex: Equatable, CustomStringConvertible {
         self.imaginary = imaginary
     }
     
-//    static func ==(lhs: Complex, rhs: Complex) -> Bool {
-//        return lhs.real == rhs.real && lhs.imaginary == rhs.imaginary
-//    }
-//    
-//    static func +(lhs: Complex, rhs: Complex) -> Complex {
-//        return Complex(real: lhs.real + rhs.real, imaginary: lhs.imaginary + rhs.imaginary)
-//    }
-//    
-//    static func *(lhs: Complex, rhs: Complex) -> Complex {
-//        return Complex(real: lhs.real * rhs.real - lhs.imaginary * rhs.imaginary, imaginary: lhs.real * rhs.imaginary + rhs.real * lhs.imaginary)
-//    }
+    static func ==(lhs: Complex, rhs: Complex) -> Bool {
+        return lhs.real == rhs.real && lhs.imaginary == rhs.imaginary
+    }
+
+    static func +(lhs: Complex, rhs: Complex) -> Complex {
+        return Complex(real: lhs.real + rhs.real, imaginary: lhs.imaginary + rhs.imaginary)
+    }
+
+    static func *(lhs: Complex, rhs: Complex) -> Complex {
+        return Complex(real: lhs.real * rhs.real - lhs.imaginary * rhs.imaginary, imaginary: lhs.real * rhs.imaginary + rhs.real * lhs.imaginary)
+    }
     
     var description: String {
         get {
