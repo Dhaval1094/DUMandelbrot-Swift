@@ -1,11 +1,18 @@
 # DUMendelbrot-Swift
-This project is about to generate mandalbrot pattern with the equation z(n+1) = zn^2 + c, in swift.
+This project is about to generate mandalbrot view with the equation z(n+1) = zn^2 + c, in swift.
 
 ![Screenshot](https://github.com/Dhaval1094/DTScrollableTabbar-Swift/blob/master/Screenshots/Logo/icon_logo.png)
 
-There are various functionalities like pixels, zooming, random colors are implemented. 
+The functionalities implemeted are 
 
-For zooming, just enter the required zoom value and tap on complex plane at where tou want to zoom in.
+1 - Zoom in to infinite level
+2 - Random colors
+3 - Enter zoom level and tap to pick complex coordinate in pattern for zoom at this portion
+4 - Pixel size setting for clearity of view
+5 - Runtime description of iterations counts and zoom level 
+6 - Show list for all complex numbers saperatly which are inside and outside the mandalbrot set
+7 - Showing processed time for completeing iterations and draw the view
+
 
 
 
