@@ -11,17 +11,29 @@ import Foundation
 
 struct Complex: Equatable, CustomStringConvertible {
     
-    public var real: Double
-    public var imaginary: Double
-    public init() {
-        self.init(0, 0)
+    var real: Double
+    var imaginary: Double
+    init() {
+        self.init(real: 0, imaginary: 0)
     }
-    public init(_ real: Double,_ imaginary:Double) {
+    init(real: Double,imaginary:Double) {
         self.real = real
         self.imaginary = imaginary
     }
     
-    public var description: String {
+//    static func ==(lhs: Complex, rhs: Complex) -> Bool {
+//        return lhs.real == rhs.real && lhs.imaginary == rhs.imaginary
+//    }
+//    
+//    static func +(lhs: Complex, rhs: Complex) -> Complex {
+//        return Complex(real: lhs.real + rhs.real, imaginary: lhs.imaginary + rhs.imaginary)
+//    }
+//    
+//    static func *(lhs: Complex, rhs: Complex) -> Complex {
+//        return Complex(real: lhs.real * rhs.real - lhs.imaginary * rhs.imaginary, imaginary: lhs.real * rhs.imaginary + rhs.real * lhs.imaginary)
+//    }
+    
+    var description: String {
         get {
             let r = String(format: "%.2f", real)
             let i = String(format: "%.2f", abs(imaginary))

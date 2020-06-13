@@ -13,12 +13,12 @@ class DUSelectSetVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var tableView: UITableView!
     
     var arrSet = [
-        SetProperty(name: Constants.SetNames.fullSet, image: "FullSet", complex: Complex(-0.75, 0.0), zoomVal: 0.7),
-        SetProperty(name: Constants.SetNames.seaHorseValley, image: "Seahore", complex: Complex(-0.744, 0.12), zoomVal: 100),
-        SetProperty(name: Constants.SetNames.elephantValley, image: "Elephant", complex: Complex(0.28,0.485), zoomVal: 200),
-        SetProperty(name: Constants.SetNames.littleMandlebrot, image: "LittleMendalbrot", complex: Complex(-1.77,0), zoomVal: 20),
-        SetProperty(name: Constants.SetNames.anotherMendalbrot, image: "JustAnother", complex: Complex(-0.1592,-1.0338), zoomVal: 80),
-        SetProperty(name: Constants.SetNames.justSomeSpot, image: "JustSomeSpot", complex: Complex(-1.25865, -0.373908), zoomVal: 6600)
+        SetProperty(name: Constants.SetNames.e1, image: "e1", complex: Complex(real: -0.75, imaginary: 0.0), zoomVal: 0.7),
+        SetProperty(name: Constants.SetNames.e2, image: "e2", complex: Complex(real: -0.744, imaginary: 0.12), zoomVal: 100),
+        SetProperty(name: Constants.SetNames.e3, image: "e3", complex: Complex(real: 0.28,imaginary: 0.485), zoomVal: 400),
+        SetProperty(name: Constants.SetNames.e4, image: "e4", complex: Complex(real: -1.77,imaginary: 0), zoomVal: 20),
+        SetProperty(name: Constants.SetNames.e5, image: "e5", complex: Complex(real: -0.1592,imaginary: -1.0338), zoomVal: 80),
+        SetProperty(name: Constants.SetNames.e6, image: "e6", complex: Complex(real: -1.25865, imaginary: -0.373908), zoomVal: 6600)
     ]
     
     //MARK: - Lifecycle Methods
@@ -60,7 +60,7 @@ class DUSelectSetVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.size.width / 1.5
+        return 180
     }
     
 }

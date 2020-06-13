@@ -9,24 +9,30 @@
 import UIKit
 import Foundation
 
-public struct ComplexRect: Equatable, CustomStringConvertible {
-    var topLeft: Complex
-    var bottomRight: Complex
-    var bottomLeft: Complex
-    var topRight: Complex
+class ComplexPlane: NSObject {
+    
+    static func == (lhs: ComplexPlane, rhs: ComplexPlane) -> Bool {
+        return true
+    }
+    
+    var topLeft = Complex()
+    var bottomRight = Complex()
+    var bottomLeft = Complex()
+    var topRight = Complex()
+    
+    override init() {
+        super.init()
+    }
     
     init(_ c1: Complex, _ c2: Complex) {
         let tlr = min(c1.real, c2.real)
         let tli = max(c1.imaginary, c2.imaginary)
         let brr = max(c1.real, c2.real)
         let bri = min(c1.imaginary, c2.imaginary)
-        topLeft = Complex(tlr, tli)
-        bottomRight = Complex(brr, bri)
-        bottomLeft = Complex(tlr, bri)
-        topRight = Complex(brr, tli)
+        topLeft = Complex(real: tlr, imaginary: tli)
+        bottomRight = Complex(real: brr, imaginary: bri)
+        bottomLeft = Complex(real: tlr, imaginary: bri)
+        topRight = Complex(real: brr, imaginary: tli)
     }
 
-    public var description: String {
-        return "tl:\(topLeft), br:\(bottomRight), bl:\(bottomLeft), tr:\(topRight)"
-    }
 }
