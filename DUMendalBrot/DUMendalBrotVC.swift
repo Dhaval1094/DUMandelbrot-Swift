@@ -29,7 +29,7 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
     @IBOutlet weak var switchShowDetail: UISwitch!
     @IBOutlet weak var lblProcess: UILabel!
     
-    var objSet: SetProperty!
+    var objSet: DUSetProperty!
     var isShowInsideNumbersTable = false
     var arrInSideSetEquetions = [String]()
     var arrOutSideSetEquetions = [String]()
@@ -61,6 +61,7 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
     }
     
     func updateView() {
+        viewSettings.isHidden = true
         indicatorView.startAnimating()
         indicatorView.isHidden = false
         viewIndicator.isHidden = false
@@ -172,6 +173,12 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
         tableView.isHidden = true
         sender.isHidden = true
     }
+    
+    @IBAction func btnChangeColorsClicked(_ sender: Any) {
+        mendalBrotView.isColorsInitialized = false
+        self.updateView()
+    }
+    
 }
 
 extension DUMendalBrotVC: UITableViewDataSource {

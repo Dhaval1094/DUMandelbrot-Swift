@@ -21,7 +21,7 @@ class DUMendalBrotView: UIView {
     
 //    public var mandelbrotRect = ComplexRect(Complex(real: -2.1, imaginary: 1.5), Complex(real: 1.0, imaginary: -1.5))
     var complexPlane = ComplexPlane()
-    let rectScale = 1
+    let rectScale = 1.0
     var pixelValue = 1.0
     var colorCount = 100
     var colorSet = [UIColor]()
@@ -33,6 +33,7 @@ class DUMendalBrotView: UIView {
     var isDrawingNeeded = true
     var isPickerMode = false
     var arrRealnComplexCoords = [(CGPoint.zero,Complex())]
+    var isColorsInitialized = false
     
     //Mark: - Lifecycle methods
     
@@ -40,8 +41,11 @@ class DUMendalBrotView: UIView {
         if !isStartDrawing {
             return
         }
+        if !isColorsInitialized {
+            isColorsInitialized = true
+            initializeColors()
+        }
         let startTime = Date().timeIntervalSince1970
-        initializeColors()
         drawMandelbrotOnComplexPlane(rect: rect)
         //Drwing completed
         calculateTime(startTime: startTime)
@@ -62,9 +66,9 @@ class DUMendalBrotView: UIView {
         let startTime = Date().timeIntervalSince1970
         totalIterations = 0
         arrRealnComplexCoords.removeAll()
-        for xVal in stride(from: 0, to: width, by: 1.0) {
-            for yVal in stride(from: 0, to: height, by: 1.0) {
-                let complexNum = self.viewCoordinatesToComplexCoordinates(x: xVal, y: yVal, rect: rect)
+        for xVal in stride(from: 0, to: width, by: pixelValue) {
+            for yVal in stride(from: 0, to: height, by: pixelValue) {
+                let complexNum = self.convertViewCoordinatesToComplexCoordinates(x: xVal, y: yVal, rect: rect)
                 arrRealnComplexCoords.append((CGPoint.init(x: xVal, y: yVal), complexNum))
                 let color = self.implementMendalbrotEquationOn(complexNum: complexNum)
                 let path = UIBezierPath(rect: CGRect(x: xVal, y: yVal, width: pixelValue, height: pixelValue))
@@ -73,7 +77,7 @@ class DUMendalBrotView: UIView {
                 totalIterations += 1
             }
         }
-        let elapsedTime = NSDate().timeIntervalSince1970 - startTime
+        let elapsedTime = Date().timeIntervalSince1970 - startTime
         Swift.print("Calculation time: \(elapsedTime)", terminator: "")
     }
     
@@ -91,23 +95,41 @@ class DUMendalBrotView: UIView {
     }
     
     func initializeColors() {
-       // if colorSet.count < 2 {
-            colorSet.removeAll()
-            for c in 0...colorCount {
-                let c_f = CGFloat(c)
-                let hue = CGFloat(abs(sin(c_f/30.0)))
-                let brightness = CGFloat(c_f/100.0 + 0.8)
-                colorSet.append(UIColor(hue: hue, saturation: 1.0, brightness: brightness, alpha: 1.0))
+        colorSet.removeAll()
+        for i in 0...colorCount {
+            var float: CGFloat {
+                return CGFloat(arc4random()) / CGFloat(UInt32.max)
             }
-      //  }
+            let r = float
+            let g = float
+            let b = float
+            
+            colorSet.append(UIColor.init(red: r, green: g, blue: b, alpha: 1.0))
+            
+//            let hue = CGFloat(abs(sin(Double(i)/30.0)))
+//            let brightness = CGFloat(Double(i)/100.0 + 0.8)
+//            colorSet.append(UIColor(hue: hue, saturation: 1.0, brightness: brightness, alpha: 1.0))
+        }
     }
-    
-    func viewCoordinatesToComplexCoordinates(x: Double, y: Double, rect: CGRect) -> Complex {
-        let tl = complexPlane.topLeft
-        let br = complexPlane.bottomRight
-        let r = tl.real + (x/Double(rect.size.width * CGFloat(rectScale)))*(br.real - tl.real)
-        let i = tl.imaginary + (y/Double(rect.size.height * CGFloat(rectScale)))*(br.imaginary - tl.imaginary)
-        return Complex(real: r,imaginary: i)
+
+    func convertViewCoordinatesToComplexCoordinates(x: Double, y: Double, rect: CGRect) -> Complex {
+        
+        let topLeft = complexPlane.topLeft
+        let bottomRight = complexPlane.bottomRight
+        
+        let xPlot = x/Double(rect.size.width * CGFloat(rectScale))
+        let yPlot = y/Double(rect.size.height * CGFloat(rectScale))
+        
+        let topReal = topLeft.real
+        let bottomReal = xPlot * (bottomRight.real - topLeft.real)
+
+        let topImaginary = topLeft.imaginary
+        let bottomImaginary = yPlot * (bottomRight.imaginary - topLeft.imaginary)
+        
+        let real = topReal + bottomReal
+        let imaginary = topImaginary + bottomImaginary
+        
+        return Complex(real: real,imaginary: imaginary)
     }
     
     func implementMendalbrotEquationOn(complexNum: Complex) -> UIColor {
@@ -125,12 +147,11 @@ class DUMendalBrotView: UIView {
             }
             if absoluteNumber > 2 {
                 arrOutSideSetEquetions.append(currComplex.description)
-                return colorSet[i] // bail as soon as the complex number is too big (you're outside the set & it'll go to infinity)
-               // return .white
+                return colorSet[i] //Outside the set
             }
         }
         arrInSideSetEquetions.append(currComplex.description)
-        //Inside the set!
+        //Inside the set
         return UIColor.black
     }
     

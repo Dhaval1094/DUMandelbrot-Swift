@@ -12,14 +12,7 @@ class DUSelectSetVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
    
     @IBOutlet weak var tableView: UITableView!
     
-    var arrSet = [
-        SetProperty(name: Constants.SetNames.e1, image: "e1", complex: Complex(real: -0.75, imaginary: 0.0), zoomVal: 0.7),
-        SetProperty(name: Constants.SetNames.e2, image: "e2", complex: Complex(real: -0.744, imaginary: 0.12), zoomVal: 100),
-        SetProperty(name: Constants.SetNames.e3, image: "e3", complex: Complex(real: 0.28,imaginary: 0.485), zoomVal: 400),
-        SetProperty(name: Constants.SetNames.e4, image: "e4", complex: Complex(real: -1.77,imaginary: 0), zoomVal: 20),
-        SetProperty(name: Constants.SetNames.e5, image: "e5", complex: Complex(real: -0.1592,imaginary: -1.0338), zoomVal: 80),
-        SetProperty(name: Constants.SetNames.e6, image: "e6", complex: Complex(real: -1.25865, imaginary: -0.373908), zoomVal: 6600)
-    ]
+    var arrSet = [DUSetProperty]()
     
     //MARK: - Lifecycle Methods
     
@@ -30,6 +23,14 @@ class DUSelectSetVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        arrSet = [
+            DUSetProperty(name: Constants.SetNames.e1, image: "e1", complex: Complex(real: -0.75, imaginary: 0.0), zoomVal: 0.7),
+            DUSetProperty(name: Constants.SetNames.e2, image: "e2", complex: Complex(real: -0.744, imaginary: 0.12), zoomVal: 100),
+            DUSetProperty(name: Constants.SetNames.e3, image: "e3", complex: Complex(real: 0.28,imaginary: 0.485), zoomVal: 400),
+            DUSetProperty(name: Constants.SetNames.e4, image: "e4", complex: Complex(real: -1.77,imaginary: 0), zoomVal: 20),
+            DUSetProperty(name: Constants.SetNames.e5, image: "e5", complex: Complex(real: -0.1592,imaginary: -1.0338), zoomVal: 80),
+            DUSetProperty(name: Constants.SetNames.e6, image: "e6", complex: Complex(real: -1.25865, imaginary: -0.373908), zoomVal: 6600)
+        ]
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,18 +66,4 @@ class DUSelectSetVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
 }
 
-class SetProperty {
-    
-    var name = ""
-    var image = ""
-    var complex = Complex()
-    var zoomVal = 0.0
-    
-    init(name: String, image: String, complex: Complex, zoomVal: Double) {
-        self.name = name
-        self.image = image
-        self.complex = complex
-        self.zoomVal = zoomVal
-    }
-    
-}
+

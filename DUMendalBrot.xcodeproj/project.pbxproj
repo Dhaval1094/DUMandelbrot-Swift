@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8842611324956C40008C808A /* DUSetProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842611224956C40008C808A /* DUSetProperty.swift */; };
 		88884B99249150A600072A3C /* DUTableViewCellEquations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88884B98249150A600072A3C /* DUTableViewCellEquations.swift */; };
 		88ABBA25248FD6B800F8D540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABBA24248FD6B800F8D540 /* AppDelegate.swift */; };
 		88ABBA27248FD6B800F8D540 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ABBA26248FD6B800F8D540 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8842611224956C40008C808A /* DUSetProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DUSetProperty.swift; sourceTree = "<group>"; };
 		88884B98249150A600072A3C /* DUTableViewCellEquations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DUTableViewCellEquations.swift; sourceTree = "<group>"; };
 		88ABBA21248FD6B800F8D540 /* DUMendalBrot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DUMendalBrot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88ABBA24248FD6B800F8D540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				88ABBA26248FD6B800F8D540 /* SceneDelegate.swift */,
 				88ABBA46248FF41300F8D540 /* Constants.swift */,
 				88ABBA28248FD6B800F8D540 /* DUSelectSetVC.swift */,
+				8842611224956C40008C808A /* DUSetProperty.swift */,
 				88ABBA40248FE46D00F8D540 /* DUMendalBrotVC.swift */,
 				88ABBA3E248FDBC400F8D540 /* DUMendalBrotView.swift */,
 				88ABBA3A248FD97D00F8D540 /* DUCalculateComplex.swift */,
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8842611324956C40008C808A /* DUSetProperty.swift in Sources */,
 				88ABBA29248FD6B800F8D540 /* DUSelectSetVC.swift in Sources */,
 				88ABBA492490088500F8D540 /* DUSelectSetCell.swift in Sources */,
 				88ABBA41248FE46D00F8D540 /* DUMendalBrotVC.swift in Sources */,
