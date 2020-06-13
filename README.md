@@ -11,7 +11,7 @@ The functionalities implemeted are
 4 - Pixel size setting for clearity of view
 5 - Runtime description of iterations counts and zoom level 
 6 - Show list for all complex numbers saperatly which are inside and outside the mandalbrot set
-7 - Showing processed time for completeing iterations and draw the view
+7 - Showing processed time for completeing iterations and draw the view 
 
 
 
