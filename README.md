@@ -1,5 +1,5 @@
-# DUMendelbrot-Swift
-This project is about to generate mandalbrot view with the equation z(n+1) = zn^2 + c, in swift.
+# DUMendalbrot-Swift
+This project is about to generate mendalbrot view with the equation z(n+1) = zn^2 + c, in swift.
 
 ![Screenshot](https://github.com/Dhaval1094/DTScrollableTabbar-Swift/blob/master/Screenshots/Logo/icon_logo.png)
 
@@ -30,7 +30,7 @@ The functionalities implemeted are
 ![sc3](https://github.com/Dhaval1094/DUMendelbrot-Swift/blob/master/Images/sc3.png)
 ![sc4](https://github.com/Dhaval1094/DUMendelbrot-Swift/blob/master/Images/sc4.png)
 
-7. Show list for all complex numbers saperatly which are inside and outside the mandalbrot set
+7. Show list for all complex numbers saperatly which are inside and outside the mendalbrot set
 
 ![cc](https://github.com/Dhaval1094/DUMendelbrot-Swift/blob/master/Images/cc.png)
 
