@@ -184,11 +184,11 @@ class DUMandelBrotView: UIView {
              */
             
             if absoluteNumber > 2 {
-                arrOutSideSetEquetions.append(currComplex.description)
+                arrOutSideSetEquetions.append(Zn.description)
                 return colorSet[i] //Outside the set
             }
         }
-        arrInSideSetEquetions.append(currComplex.description)
+        arrInSideSetEquetions.append(Zn.description)
         //Inside the set
         return UIColor.black
     }
