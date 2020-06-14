@@ -1,6 +1,6 @@
 //
-//  DUMendalBrotVC.swift
-//  DUMendalBrot
+//  DUMandelBrotVC.swift
+//  DUMandelBrot
 //
 //  Created by Dhaval Trivedi on 09/06/20.
 //  Copyright © 2020 Dhaval Trivedi. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
+class DUMandelBrotVC: UIViewController, DUMandelBrotViewDelegate {
 
     @IBOutlet weak var viewEnterZoomLevelPicker: UIView!
     @IBOutlet weak var btnCloseTable: UIButton!
@@ -24,7 +24,7 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewDescription: UIView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var mendalBrotView: DUMendalBrotView!
+    @IBOutlet weak var mendalBrotView: DUMandelBrotView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var switchShowDetail: UISwitch!
     @IBOutlet weak var lblProcess: UILabel!
@@ -37,17 +37,6 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        mendalBrotView.delegate = self
-        viewDescription.isHidden = false
-        viewEnterZoomLevelPicker.isHidden = true
-        tableView.isHidden = true
-        btnCloseTable.isHidden = true
-        viewSettings.isHidden = true
-//        lblProcess.text = "Iterating"
-        textView.text = "Iterating"
-        viewDescription.layer.borderColor = UIColor.black.cgColor
-        viewDescription.layer.borderWidth = 1
-        indicatorView.color = UIColor.white
         setDefaultValues()
     }
     
@@ -74,7 +63,7 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
             self.mendalBrotView.colorCount = Int(self.txtColorCounts.text ?? "0") ?? 100
             self.mendalBrotView.isStartDrawing = true
             self.lblProcess.text = "Zoom Lavel: " + self.objSet.zoomVal.description
-            self.mendalBrotView.createMendalBortRectFor(complex: self.objSet.complex, zoomVal: self.objSet.zoomVal)
+            self.mendalBrotView.createMandelBortRectFor(complex: self.objSet.complex, zoomVal: self.objSet.zoomVal)
         }
     }
     
@@ -82,11 +71,22 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
         txtZoomValue.text = objSet.zoomVal.description
         txtRealNumber.text = objSet.complex.real.description
         txtImaginaryNumber.text = objSet.complex.imaginary.description
-        txtPixelValue.text = "6.0"
+        txtPixelValue.text = "1.0"
         txtColorCounts.text = "100"
+        mendalBrotView.delegate = self
+        viewDescription.isHidden = false
+        viewEnterZoomLevelPicker.isHidden = true
+        tableView.isHidden = true
+        btnCloseTable.isHidden = true
+        viewSettings.isHidden = true
+        textView.text = "Iterating"
+        viewDescription.layer.borderColor = UIColor.black.cgColor
+        viewDescription.layer.borderWidth = 1
+        indicatorView.color = UIColor.white
+        txtColorCounts.delegate = self
     }
     
-    //MARK: - MendalbrotView Delegate
+    //MARK: - MandelbrotView Delegate
     
     func iterationsCompletedWith(count: Int) {
         textView.text = "Iterations completed: \(count)"
@@ -182,7 +182,7 @@ class DUMendalBrotVC: UIViewController, DUMendalBrotViewDelegate {
     
 }
 
-extension DUMendalBrotVC: UITableViewDataSource {
+extension DUMandelBrotVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isShowInsideNumbersTable {
@@ -195,6 +195,17 @@ extension DUMendalBrotVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DUTableViewCellEquations") as! DUTableViewCellEquations
         cell.lblEquation.text = isShowInsideNumbersTable ?  arrInSideSetEquetions[indexPath.row] : arrOutSideSetEquetions[indexPath.row]
         return cell
+    }
+    
+}
+
+extension DUMandelBrotVC: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == txtColorCounts {
+            mendalBrotView.isColorsInitialized = false
+        }
+        return true
     }
     
 }

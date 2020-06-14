@@ -1,6 +1,6 @@
 //
 //  DUSetProperty.swift
-//  DUMendalBrot
+//  DUMandelBrot
 //
 //  Created by Dhaval Trivedi on 14/06/20.
 //  Copyright © 2020 Dhaval Trivedi. All rights reserved.

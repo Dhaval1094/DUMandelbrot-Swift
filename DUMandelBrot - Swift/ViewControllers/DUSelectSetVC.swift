@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  DUMendalBrot
+//  DUMandelBrot
 //
 //  Created by Dhaval Trivedi on 09/06/20.
 //  Copyright © 2020 Dhaval Trivedi. All rights reserved.
@@ -55,7 +55,7 @@ class DUSelectSetVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     //MARK: - Table View Delegates
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mendalbrotVC = self.storyboard?.instantiateViewController(identifier: "DUMendalBrotVC") as! DUMendalBrotVC
+        let mendalbrotVC = self.storyboard?.instantiateViewController(identifier: "DUMandelBrotVC") as! DUMandelBrotVC
         mendalbrotVC.objSet = arrSet[indexPath.row]
         self.navigationController?.pushViewController(mendalbrotVC, animated: true)
     }

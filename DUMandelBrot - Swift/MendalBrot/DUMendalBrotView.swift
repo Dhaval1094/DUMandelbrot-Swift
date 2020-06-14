@@ -1,6 +1,6 @@
 //
-//  DUMendalBrotView.swift
-//  DUMendalBrot
+//  DUMandelBrotView.swift
+//  DUMandelBrot
 //
 //  Created by Dhaval Trivedi on 09/06/20.
 //  Copyright © 2020 Dhaval Trivedi. All rights reserved.
@@ -9,23 +9,23 @@
 import UIKit
 import CoreGraphics
 
-protocol DUMendalBrotViewDelegate {
+protocol DUMandelBrotViewDelegate {
     func iterationsCompletedWith(count: Int)
     func iterationEquationValues(arrInSideSetEquetions: [String], arrOutSideSetEquetions:[String])
     func pickedCoordinate(complex: Complex)
 }
 
-class DUMendalBrotView: UIView {
-
+class DUMandelBrotView: UIView {
+    
     //MARK: - Variables
     
-//    public var mandelbrotRect = ComplexRect(Complex(real: -2.1, imaginary: 1.5), Complex(real: 1.0, imaginary: -1.5))
+    //    public var mandelbrotRect = ComplexRect(Complex(real: -2.1, imaginary: 1.5), Complex(real: 1.0, imaginary: -1.5))
     var complexPlane = ComplexPlane()
     let rectScale = 1.0
     var pixelValue = 1.0
     var colorCount = 100
     var colorSet = [UIColor]()
-    var delegate: DUMendalBrotViewDelegate?
+    var delegate: DUMandelBrotViewDelegate?
     var isStartDrawing = false
     var totalIterations = 0
     var arrInSideSetEquetions = [String]()
@@ -50,7 +50,7 @@ class DUMendalBrotView: UIView {
         //Drwing completed
         calculateTime(startTime: startTime)
     }
-   
+    
     //Mark: - Other Methods
     
     func calculateTime(startTime: Double) {
@@ -70,7 +70,7 @@ class DUMendalBrotView: UIView {
             for yVal in stride(from: 0, to: height, by: pixelValue) {
                 let complexNum = self.convertViewCoordinatesToComplexCoordinates(x: xVal, y: yVal, rect: rect)
                 arrRealnComplexCoords.append((CGPoint.init(x: xVal, y: yVal), complexNum))
-                let color = self.implementMendalbrotEquationOn(complexNum: complexNum)
+                let color = self.implementMandelbrotEquationOn(complexNum: complexNum)
                 let path = UIBezierPath(rect: CGRect(x: xVal, y: yVal, width: pixelValue, height: pixelValue))
                 color.set()
                 path.fill()
@@ -81,7 +81,7 @@ class DUMendalBrotView: UIView {
         Swift.print("Calculation time: \(elapsedTime)", terminator: "")
     }
     
-    func createMendalBortRectFor(complex: Complex, zoomVal: Double) {
+    func createMandelBortRectFor(complex: Complex, zoomVal: Double) {
         print("picked: " , complex.description, " , zoom: ", zoomVal)
         var topLeftPoint = complex
         var bottomRightPoint = complex
@@ -106,12 +106,12 @@ class DUMendalBrotView: UIView {
             
             colorSet.append(UIColor.init(red: r, green: g, blue: b, alpha: 1.0))
             
-//            let hue = CGFloat(abs(sin(Double(i)/30.0)))
-//            let brightness = CGFloat(Double(i)/100.0 + 0.8)
-//            colorSet.append(UIColor(hue: hue, saturation: 1.0, brightness: brightness, alpha: 1.0))
+            //            let hue = CGFloat(abs(sin(Double(i)/30.0)))
+            //            let brightness = CGFloat(Double(i)/100.0 + 0.8)
+            //            colorSet.append(UIColor(hue: hue, saturation: 1.0, brightness: brightness, alpha: 1.0))
         }
     }
-
+    
     func convertViewCoordinatesToComplexCoordinates(x: Double, y: Double, rect: CGRect) -> Complex {
         
         let topLeft = complexPlane.topLeft
@@ -122,7 +122,7 @@ class DUMendalBrotView: UIView {
         
         let topReal = topLeft.real
         let bottomReal = xPlot * (bottomRight.real - topLeft.real)
-
+        
         let topImaginary = topLeft.imaginary
         let bottomImaginary = yPlot * (bottomRight.imaginary - topLeft.imaginary)
         
@@ -132,19 +132,57 @@ class DUMendalBrotView: UIView {
         return Complex(real: real,imaginary: imaginary)
     }
     
-    func implementMendalbrotEquationOn(complexNum: Complex) -> UIColor {
-        //Mendalbrot Equation
-        // Zn+1 = (Zn)^2 + c 
-        var currComplex = Complex()
+    func implementMandelbrotEquationOn(complexNum: Complex) -> UIColor {
+        //Mandelbrot Equation
+        // Zn+1 = (Zn)^2 + c
+        var Zn = Complex()
+        let c = complexNum
         for i in 1...colorCount {
-            currComplex = currComplex*currComplex + complexNum
-           // print(z.description)
+            Zn = Zn*Zn + c
+            // print(z.description)
             var absoluteNumber: Double {
-                let realSquare = currComplex.real*currComplex.real
-                let imaginarySquare = currComplex.imaginary*currComplex.imaginary
-                let modulus = sqrt(realSquare + imaginarySquare) //Absolute Number
+                let realSquare = Zn.real*Zn.real
+                let imaginarySquare = Zn.imaginary*Zn.imaginary
+                let riSquare = realSquare + imaginarySquare
+                let modulus = sqrt(riSquare) //Absolute Number
                 return modulus
             }
+            
+            /* ***** For experimental purpose
+             
+             if absoluteNumber > 1.5 && absoluteNumber < 1.6 {
+             return .yellow
+             }
+             if absoluteNumber > 1.6 && absoluteNumber < 1.7 {
+             return .red
+             }
+             if absoluteNumber > 1.7 && absoluteNumber < 1.8 {
+             return .orange
+             }
+             if absoluteNumber > 1.8 && absoluteNumber < 1.9 {
+             return .blue
+             }
+             if absoluteNumber > 1.9 && absoluteNumber < 2.0 {
+             return .gray
+             }
+             if absoluteNumber > 2.0 && absoluteNumber < 2.1 {
+             return .purple
+             }
+             if absoluteNumber > 2.1 && absoluteNumber < 2.2 {
+             return .systemPink
+             }
+             if absoluteNumber > 2.2 && absoluteNumber < 2.3 {
+             return .systemBackground
+             }
+             if absoluteNumber > 2.3 && absoluteNumber < 2.4 {
+             return .systemBrown
+             }
+             if absoluteNumber > 2.4 && absoluteNumber < 2.5 {
+             return .systemGray6
+             }
+             
+             */
+            
             if absoluteNumber > 2 {
                 arrOutSideSetEquetions.append(currComplex.description)
                 return colorSet[i] //Outside the set
@@ -157,7 +195,7 @@ class DUMendalBrotView: UIView {
     
 }
 
-extension DUMendalBrotView {
+extension DUMandelBrotView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !isPickerMode {

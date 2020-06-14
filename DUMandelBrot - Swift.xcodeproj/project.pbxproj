@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88BB9149249666B300031526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB9148249666B300031526 /* AppDelegate.swift */; };
+		88BB914B249666B300031526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB914A249666B300031526 /* SceneDelegate.swift */; };
+		88BB9150249666B300031526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BB914E249666B300031526 /* Main.storyboard */; };
+		88BB9152249666B700031526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BB9151249666B700031526 /* Assets.xcassets */; };
+		88BB9155249666B700031526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BB9153249666B700031526 /* LaunchScreen.storyboard */; };
+		88BB915D249666CE00031526 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB915C249666CD00031526 /* Constants.swift */; };
+		88BB91692496671700031526 /* DUMendalBrotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB915F2496671600031526 /* DUMendalBrotVC.swift */; };
+		88BB916A2496671700031526 /* DUSelectSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91602496671600031526 /* DUSelectSetVC.swift */; };
+		88BB916B2496671700031526 /* DUSetProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91622496671600031526 /* DUSetProperty.swift */; };
+		88BB916C2496671700031526 /* DUComplexNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91632496671600031526 /* DUComplexNumbers.swift */; };
+		88BB916D2496671700031526 /* DUMendalBrotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91642496671600031526 /* DUMendalBrotView.swift */; };
+		88BB916E2496671700031526 /* DUComplexRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91652496671600031526 /* DUComplexRect.swift */; };
+		88BB916F2496671700031526 /* DUSelectSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91672496671700031526 /* DUSelectSetCell.swift */; };
+		88BB91702496671700031526 /* DUTableViewCellEquations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91682496671700031526 /* DUTableViewCellEquations.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		88BB9145249666B200031526 /* DUMandelBrot - Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DUMandelBrot - Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88BB9148249666B300031526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88BB914A249666B300031526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		88BB914F249666B300031526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88BB9151249666B700031526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88BB9154249666B700031526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88BB9156249666B700031526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88BB915C249666CD00031526 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		88BB915F2496671600031526 /* DUMendalBrotVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUMendalBrotVC.swift; sourceTree = "<group>"; };
+		88BB91602496671600031526 /* DUSelectSetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUSelectSetVC.swift; sourceTree = "<group>"; };
+		88BB91622496671600031526 /* DUSetProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUSetProperty.swift; sourceTree = "<group>"; };
+		88BB91632496671600031526 /* DUComplexNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUComplexNumbers.swift; sourceTree = "<group>"; };
+		88BB91642496671600031526 /* DUMendalBrotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUMendalBrotView.swift; sourceTree = "<group>"; };
+		88BB91652496671600031526 /* DUComplexRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUComplexRect.swift; sourceTree = "<group>"; };
+		88BB91672496671700031526 /* DUSelectSetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUSelectSetCell.swift; sourceTree = "<group>"; };
+		88BB91682496671700031526 /* DUTableViewCellEquations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUTableViewCellEquations.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88BB9142249666B200031526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88BB913C249666B200031526 = {
+			isa = PBXGroup;
+			children = (
+				88BB9147249666B200031526 /* DUMandelBrot - Swift */,
+				88BB9146249666B200031526 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88BB9146249666B200031526 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88BB9145249666B200031526 /* DUMandelBrot - Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88BB9147249666B200031526 /* DUMandelBrot - Swift */ = {
+			isa = PBXGroup;
+			children = (
+				88BB9148249666B300031526 /* AppDelegate.swift */,
+				88BB914A249666B300031526 /* SceneDelegate.swift */,
+				88BB915C249666CD00031526 /* Constants.swift */,
+				88BB91612496671600031526 /* MendalBrot */,
+				88BB91662496671700031526 /* TableCells */,
+				88BB915E2496671600031526 /* ViewControllers */,
+				88BB914E249666B300031526 /* Main.storyboard */,
+				88BB9151249666B700031526 /* Assets.xcassets */,
+				88BB9153249666B700031526 /* LaunchScreen.storyboard */,
+				88BB9156249666B700031526 /* Info.plist */,
+			);
+			path = "DUMandelBrot - Swift";
+			sourceTree = "<group>";
+		};
+		88BB915E2496671600031526 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88BB915F2496671600031526 /* DUMendalBrotVC.swift */,
+				88BB91602496671600031526 /* DUSelectSetVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88BB91612496671600031526 /* MendalBrot */ = {
+			isa = PBXGroup;
+			children = (
+				88BB91622496671600031526 /* DUSetProperty.swift */,
+				88BB91632496671600031526 /* DUComplexNumbers.swift */,
+				88BB91642496671600031526 /* DUMendalBrotView.swift */,
+				88BB91652496671600031526 /* DUComplexRect.swift */,
+			);
+			path = MendalBrot;
+			sourceTree = "<group>";
+		};
+		88BB91662496671700031526 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				88BB91672496671700031526 /* DUSelectSetCell.swift */,
+				88BB91682496671700031526 /* DUTableViewCellEquations.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88BB9144249666B200031526 /* DUMandelBrot - Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88BB9159249666B700031526 /* Build configuration list for PBXNativeTarget "DUMandelBrot - Swift" */;
+			buildPhases = (
+				88BB9141249666B200031526 /* Sources */,
+				88BB9142249666B200031526 /* Frameworks */,
+				88BB9143249666B200031526 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DUMandelBrot - Swift";
+			productName = "DUMandelBrot - Swift";
+			productReference = 88BB9145249666B200031526 /* DUMandelBrot - Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88BB913D249666B200031526 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Dhaval Trivedi";
+				TargetAttributes = {
+					88BB9144249666B200031526 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 88BB9140249666B200031526 /* Build configuration list for PBXProject "DUMandelBrot - Swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88BB913C249666B200031526;
+			productRefGroup = 88BB9146249666B200031526 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88BB9144249666B200031526 /* DUMandelBrot - Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88BB9143249666B200031526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BB9155249666B700031526 /* LaunchScreen.storyboard in Resources */,
+				88BB9152249666B700031526 /* Assets.xcassets in Resources */,
+				88BB9150249666B300031526 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88BB9141249666B200031526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BB916B2496671700031526 /* DUSetProperty.swift in Sources */,
+				88BB916F2496671700031526 /* DUSelectSetCell.swift in Sources */,
+				88BB9149249666B300031526 /* AppDelegate.swift in Sources */,
+				88BB916C2496671700031526 /* DUComplexNumbers.swift in Sources */,
+				88BB916A2496671700031526 /* DUSelectSetVC.swift in Sources */,
+				88BB91702496671700031526 /* DUTableViewCellEquations.swift in Sources */,
+				88BB91692496671700031526 /* DUMendalBrotVC.swift in Sources */,
+				88BB916E2496671700031526 /* DUComplexRect.swift in Sources */,
+				88BB916D2496671700031526 /* DUMendalBrotView.swift in Sources */,
+				88BB914B249666B300031526 /* SceneDelegate.swift in Sources */,
+				88BB915D249666CE00031526 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88BB914E249666B300031526 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88BB914F249666B300031526 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		88BB9153249666B700031526 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88BB9154249666B700031526 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88BB9157249666B700031526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		88BB9158249666B700031526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88BB915A249666B700031526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B5Y2MVNRXQ;
+				INFOPLIST_FILE = "DUMandelBrot - Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Dhaval.trivedi.DUMandelBrot---Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88BB915B249666B700031526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B5Y2MVNRXQ;
+				INFOPLIST_FILE = "DUMandelBrot - Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Dhaval.trivedi.DUMandelBrot---Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88BB9140249666B200031526 /* Build configuration list for PBXProject "DUMandelBrot - Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88BB9157249666B700031526 /* Debug */,
+				88BB9158249666B700031526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88BB9159249666B700031526 /* Build configuration list for PBXNativeTarget "DUMandelBrot - Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88BB915A249666B700031526 /* Debug */,
+				88BB915B249666B700031526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88BB913D249666B200031526 /* Project object */;
+}
