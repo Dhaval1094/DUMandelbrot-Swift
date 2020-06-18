@@ -25,14 +25,15 @@ class ComplexPlane: NSObject {
     }
     
     init(_ c1: Complex, _ c2: Complex) {
-        let tlr = min(c1.real, c2.real)
-        let tli = max(c1.imaginary, c2.imaginary)
-        let brr = max(c1.real, c2.real)
-        let bri = min(c1.imaginary, c2.imaginary)
-        topLeft = Complex(real: tlr, imaginary: tli)
-        bottomRight = Complex(real: brr, imaginary: bri)
-        bottomLeft = Complex(real: tlr, imaginary: bri)
-        topRight = Complex(real: brr, imaginary: tli)
+        let tl_real = min(c1.real, c2.real)
+        let tl_imaginary = max(c1.imaginary, c2.imaginary)
+        let br_real = max(c1.real, c2.real)
+        let br_imaginary = min(c1.imaginary, c2.imaginary)
+        topLeft = Complex(real: tl_real, imaginary: tl_imaginary)
+        bottomRight = Complex(real: br_real, imaginary: br_imaginary)
+        bottomLeft = Complex(real: tl_real, imaginary: br_imaginary)
+        topRight = Complex(real: br_real, imaginary: tl_imaginary)
     }
 
 }
+

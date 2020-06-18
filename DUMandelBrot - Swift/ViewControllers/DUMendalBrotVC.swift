@@ -60,9 +60,11 @@ class DUMandelBrotVC: UIViewController, DUMandelBrotViewDelegate {
             } else {
                 self.mendalBrotView.pixelValue = NSString(string: self.txtPixelValue.text ?? "0").doubleValue
             }
-            self.mendalBrotView.colorCount = Int(self.txtColorCounts.text ?? "0") ?? 100
+            self.mendalBrotView.iterationCount = Int(self.txtColorCounts.text ?? "0") ?? 100
             self.mendalBrotView.isStartDrawing = true
-            self.lblProcess.text = "Zoom Lavel: " + self.objSet.zoomVal.description
+            let strZoom = "Zoom Lavel: " + self.objSet.zoomVal.description
+            let strCoords = "Coordinates: " + self.objSet.complex.description
+            self.lblProcess.text = strZoom + ", " + strCoords
             self.mendalBrotView.createMandelBortRectFor(complex: self.objSet.complex, zoomVal: self.objSet.zoomVal)
         }
     }

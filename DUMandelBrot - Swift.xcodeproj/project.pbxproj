@@ -18,7 +18,7 @@
 		88BB916B2496671700031526 /* DUSetProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91622496671600031526 /* DUSetProperty.swift */; };
 		88BB916C2496671700031526 /* DUComplexNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91632496671600031526 /* DUComplexNumbers.swift */; };
 		88BB916D2496671700031526 /* DUMendalBrotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91642496671600031526 /* DUMendalBrotView.swift */; };
-		88BB916E2496671700031526 /* DUComplexRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91652496671600031526 /* DUComplexRect.swift */; };
+		88BB916E2496671700031526 /* DUComplexPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91652496671600031526 /* DUComplexPlane.swift */; };
 		88BB916F2496671700031526 /* DUSelectSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91672496671700031526 /* DUSelectSetCell.swift */; };
 		88BB91702496671700031526 /* DUTableViewCellEquations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BB91682496671700031526 /* DUTableViewCellEquations.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +37,7 @@
 		88BB91622496671600031526 /* DUSetProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUSetProperty.swift; sourceTree = "<group>"; };
 		88BB91632496671600031526 /* DUComplexNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUComplexNumbers.swift; sourceTree = "<group>"; };
 		88BB91642496671600031526 /* DUMendalBrotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUMendalBrotView.swift; sourceTree = "<group>"; };
-		88BB91652496671600031526 /* DUComplexRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUComplexRect.swift; sourceTree = "<group>"; };
+		88BB91652496671600031526 /* DUComplexPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUComplexPlane.swift; sourceTree = "<group>"; };
 		88BB91672496671700031526 /* DUSelectSetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUSelectSetCell.swift; sourceTree = "<group>"; };
 		88BB91682496671700031526 /* DUTableViewCellEquations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUTableViewCellEquations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +101,7 @@
 				88BB91622496671600031526 /* DUSetProperty.swift */,
 				88BB91632496671600031526 /* DUComplexNumbers.swift */,
 				88BB91642496671600031526 /* DUMendalBrotView.swift */,
-				88BB91652496671600031526 /* DUComplexRect.swift */,
+				88BB91652496671600031526 /* DUComplexPlane.swift */,
 			);
 			path = MendalBrot;
 			sourceTree = "<group>";
@@ -193,7 +193,7 @@
 				88BB916A2496671700031526 /* DUSelectSetVC.swift in Sources */,
 				88BB91702496671700031526 /* DUTableViewCellEquations.swift in Sources */,
 				88BB91692496671700031526 /* DUMendalBrotVC.swift in Sources */,
-				88BB916E2496671700031526 /* DUComplexRect.swift in Sources */,
+				88BB916E2496671700031526 /* DUComplexPlane.swift in Sources */,
 				88BB916D2496671700031526 /* DUMendalBrotView.swift in Sources */,
 				88BB914B249666B300031526 /* SceneDelegate.swift in Sources */,
 				88BB915D249666CE00031526 /* Constants.swift in Sources */,

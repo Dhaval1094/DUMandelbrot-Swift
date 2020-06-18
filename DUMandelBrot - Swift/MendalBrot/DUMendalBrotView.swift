@@ -19,11 +19,9 @@ class DUMandelBrotView: UIView {
     
     //MARK: - Variables
     
-    //    public var mandelbrotRect = ComplexRect(Complex(real: -2.1, imaginary: 1.5), Complex(real: 1.0, imaginary: -1.5))
     var complexPlane = ComplexPlane()
-    let rectScale = 1.0
     var pixelValue = 1.0
-    var colorCount = 100
+    var iterationCount = 100 //Iteration count for 1 perticular coordinate
     var colorSet = [UIColor]()
     var delegate: DUMandelBrotViewDelegate?
     var isStartDrawing = false
@@ -78,17 +76,19 @@ class DUMandelBrotView: UIView {
             }
         }
         let elapsedTime = Date().timeIntervalSince1970 - startTime
-        Swift.print("Calculation time: \(elapsedTime)", terminator: "")
+        print("Calculation time: \(elapsedTime)", terminator: "")
     }
     
     func createMandelBortRectFor(complex: Complex, zoomVal: Double) {
-        print("picked: " , complex.description, " , zoom: ", zoomVal)
+        let zoom = Double(2.0/Double(zoomVal))
         var topLeftPoint = complex
         var bottomRightPoint = complex
-        topLeftPoint.real = topLeftPoint.real - Double(1.0/Double(zoomVal))
-        topLeftPoint.imaginary = topLeftPoint.imaginary - Double(1.0/Double(zoomVal))
-        bottomRightPoint.real = bottomRightPoint.real + Double(1.0/Double(zoomVal))
-        bottomRightPoint.imaginary = bottomRightPoint.imaginary + Double(1.0/Double(zoomVal))
+        topLeftPoint.real = topLeftPoint.real - zoom
+        topLeftPoint.imaginary = topLeftPoint.imaginary - zoom
+        bottomRightPoint.real = bottomRightPoint.real + zoom
+        bottomRightPoint.imaginary = bottomRightPoint.imaginary + zoom
+        
+        //Initialize complex plane with zoom level
         self.complexPlane = ComplexPlane(topLeftPoint, bottomRightPoint)
         isPickerMode = false
         self.setNeedsDisplay()
@@ -96,29 +96,28 @@ class DUMandelBrotView: UIView {
     
     func initializeColors() {
         colorSet.removeAll()
-        for i in 0...colorCount {
+        for i in 0...iterationCount {
             var float: CGFloat {
                 return CGFloat(arc4random()) / CGFloat(UInt32.max)
             }
             let r = float
             let g = float
             let b = float
-            
             colorSet.append(UIColor.init(red: r, green: g, blue: b, alpha: 1.0))
-            
-            //            let hue = CGFloat(abs(sin(Double(i)/30.0)))
-            //            let brightness = CGFloat(Double(i)/100.0 + 0.8)
-            //            colorSet.append(UIColor(hue: hue, saturation: 1.0, brightness: brightness, alpha: 1.0))
         }
     }
+    
+    //            let hue = CGFloat(abs(sin(Double(i)/30.0)))
+    //            let brightness = CGFloat(Double(i)/100.0 + 0.8)
+    //            colorSet.append(UIColor(hue: hue, saturation: 1.0, brightness: brightness, alpha: 1.0))
     
     func convertViewCoordinatesToComplexCoordinates(x: Double, y: Double, rect: CGRect) -> Complex {
         
         let topLeft = complexPlane.topLeft
         let bottomRight = complexPlane.bottomRight
         
-        let xPlot = x/Double(rect.size.width * CGFloat(rectScale))
-        let yPlot = y/Double(rect.size.height * CGFloat(rectScale))
+        let xPlot = x/Double(rect.size.width)
+        let yPlot = y/Double(rect.size.height)
         
         let topReal = topLeft.real
         let bottomReal = xPlot * (bottomRight.real - topLeft.real)
@@ -137,9 +136,8 @@ class DUMandelBrotView: UIView {
         // Zn+1 = (Zn)^2 + c
         var Zn = Complex()
         let c = complexNum
-        for i in 1...colorCount {
+        for i in 1...iterationCount {
             Zn = Zn*Zn + c
-            // print(z.description)
             var absoluteNumber: Double {
                 let realSquare = Zn.real*Zn.real
                 let imaginarySquare = Zn.imaginary*Zn.imaginary
@@ -147,42 +145,6 @@ class DUMandelBrotView: UIView {
                 let modulus = sqrt(riSquare) //Absolute Number
                 return modulus
             }
-            
-            /* ***** For experimental purpose
-             
-             if absoluteNumber > 1.5 && absoluteNumber < 1.6 {
-             return .yellow
-             }
-             if absoluteNumber > 1.6 && absoluteNumber < 1.7 {
-             return .red
-             }
-             if absoluteNumber > 1.7 && absoluteNumber < 1.8 {
-             return .orange
-             }
-             if absoluteNumber > 1.8 && absoluteNumber < 1.9 {
-             return .blue
-             }
-             if absoluteNumber > 1.9 && absoluteNumber < 2.0 {
-             return .gray
-             }
-             if absoluteNumber > 2.0 && absoluteNumber < 2.1 {
-             return .purple
-             }
-             if absoluteNumber > 2.1 && absoluteNumber < 2.2 {
-             return .systemPink
-             }
-             if absoluteNumber > 2.2 && absoluteNumber < 2.3 {
-             return .systemBackground
-             }
-             if absoluteNumber > 2.3 && absoluteNumber < 2.4 {
-             return .systemBrown
-             }
-             if absoluteNumber > 2.4 && absoluteNumber < 2.5 {
-             return .systemGray6
-             }
-             
-             */
-            
             if absoluteNumber > 2 {
                 arrOutSideSetEquetions.append(Zn.description)
                 return colorSet[i] //Outside the set
@@ -205,7 +167,7 @@ extension DUMandelBrotView {
             let position = touch.location(in: self)
             let arrTappedPoints = arrRealnComplexCoords.filter {
                 let roundRectVal: CGFloat = 5.0
-                let rect = CGRect.init(x: position.x - roundRectVal, y: position.y - roundRectVal, width: roundRectVal * 2, height: roundRectVal * 2)
+                let rect = CGRect(x: position.x - roundRectVal, y: position.y - roundRectVal, width: roundRectVal * 2, height: roundRectVal * 2)
                 return rect.contains($0.0)
             }
             if let first = arrTappedPoints.first {

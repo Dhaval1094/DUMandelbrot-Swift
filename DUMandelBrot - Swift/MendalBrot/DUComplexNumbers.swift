@@ -13,9 +13,11 @@ struct Complex: Equatable, CustomStringConvertible {
     
     var real: Double
     var imaginary: Double
+    
     init() {
         self.init(real: 0, imaginary: 0)
     }
+    
     init(real: Double,imaginary:Double) {
         self.real = real
         self.imaginary = imaginary
@@ -37,19 +39,16 @@ struct Complex: Equatable, CustomStringConvertible {
         get {
             let r = String(format: "%.2f", real)
             let i = String(format: "%.2f", abs(imaginary))
-            var result = ""
-            //            let p = -2
             switch (real,imaginary) {
             case _ where imaginary == 0:
-                result = "\(r)"
+                return r
             case _ where real == 0:
-                result = "\(i)𝒊"
+                return i + "i"
             case _ where imaginary < 0:
-                result = "\(r) - \(i)𝒊"
+                return r + " - " + i + "i"
             default:
-                result = "\(r) + \(i)𝒊"
+                return r + " + " + i + "i"
             }
-            return result
         }
     }
 }
